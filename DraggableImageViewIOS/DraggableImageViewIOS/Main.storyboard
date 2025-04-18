@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DraggableImageViewIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9M-CY-kxP" customClass="MapContainerView" customModule="DraggableImageViewIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="120" width="414" height="516"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci4-Pm-c8W" customClass="MapImageScrollView" customModule="DraggableImageViewIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="120" width="414" height="516"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBB-62-5Oc">
+                                <rect key="frame" x="50" y="70" width="113" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PBB-62-5Oc" secondAttribute="height" multiplier="113:50" id="f08-HW-aF5"/>
+                                    <constraint firstAttribute="height" constant="50" id="rzD-mo-bgo"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Zoom"/>
+                                <connections>
+                                    <action selector="clickedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DwA-gV-thw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhU-eJ-avQ" userLabel="Button2">
+                                <rect key="frame" x="281" y="70" width="113" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BhU-eJ-avQ" secondAttribute="height" multiplier="113:50" id="ZiH-Fb-C7p"/>
+                                    <constraint firstAttribute="height" constant="50" id="cty-y7-H9I"/>
+                                    <constraint firstAttribute="width" secondItem="BhU-eJ-avQ" secondAttribute="height" multiplier="113:50" id="jVs-qx-4ej"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Angle"/>
+                                <connections>
+                                    <action selector="clickedButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vwx-wd-I1h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X9M-CY-kxP" firstAttribute="leading" secondItem="ci4-Pm-c8W" secondAttribute="leading" id="4KN-1i-FI8"/>
+                            <constraint firstItem="X9M-CY-kxP" firstAttribute="trailing" secondItem="ci4-Pm-c8W" secondAttribute="trailing" id="DSE-lL-ggU"/>
+                            <constraint firstItem="ci4-Pm-c8W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="GC3-a8-F6u"/>
+                            <constraint firstItem="X9M-CY-kxP" firstAttribute="top" secondItem="ci4-Pm-c8W" secondAttribute="top" id="KOz-zY-Fln"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BhU-eJ-avQ" secondAttribute="trailing" constant="20" id="SIi-xV-Ev9"/>
+                            <constraint firstItem="PBB-62-5Oc" firstAttribute="bottom" secondItem="ci4-Pm-c8W" secondAttribute="top" id="VcX-7i-onb"/>
+                            <constraint firstItem="ci4-Pm-c8W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YRz-Fn-0aY"/>
+                            <constraint firstItem="BhU-eJ-avQ" firstAttribute="bottom" secondItem="ci4-Pm-c8W" secondAttribute="top" id="ZOO-L5-mEY"/>
+                            <constraint firstItem="PBB-62-5Oc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="dWc-Pd-wVJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ci4-Pm-c8W" secondAttribute="bottom" constant="100" id="iMd-WR-75L"/>
+                            <constraint firstItem="X9M-CY-kxP" firstAttribute="bottom" secondItem="ci4-Pm-c8W" secondAttribute="bottom" id="l7b-OL-upv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ci4-Pm-c8W" secondAttribute="trailing" id="yht-5I-OmH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="X9M-CY-kxP" id="e1H-Wo-kBa"/>
+                        <outlet property="scrollView" destination="ci4-Pm-c8W" id="kfj-8z-CaL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.77173913043478"/>
+        </scene>
+        <!--Scroll View Controller-->
+        <scene sceneID="EhV-h4-ygg">
+            <objects>
+                <viewController storyboardIdentifier="ScrollView" id="pHv-Qy-0UU" customClass="ScrollViewController" customModule="DraggableImageViewIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qz2-9g-diC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lan-Fn-PZY" customClass="FreeDrawingImageViewDrawLayer" customModule="DraggableImageViewIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dqD-97-jxf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dqD-97-jxf" firstAttribute="trailing" secondItem="lan-Fn-PZY" secondAttribute="trailing" id="22J-T3-iac"/>
+                            <constraint firstItem="dqD-97-jxf" firstAttribute="bottom" secondItem="lan-Fn-PZY" secondAttribute="bottom" id="7Nc-ED-is5"/>
+                            <constraint firstItem="lan-Fn-PZY" firstAttribute="top" secondItem="dqD-97-jxf" secondAttribute="top" id="AfZ-6i-mIk"/>
+                            <constraint firstItem="lan-Fn-PZY" firstAttribute="leading" secondItem="dqD-97-jxf" secondAttribute="leading" id="piG-Ad-Ryp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeh-61-2bz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
