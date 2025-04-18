@@ -149,7 +149,7 @@ class MapImageScrollView: UIScrollView, UIGestureRecognizerDelegate {
 //        draggableImageView?.overlayNeedsUpdate()
         let currentTime = CACurrentMediaTime()
         let diff =  currentTime - lastTime
-        if diff > 0.03{
+        if diff > 0.02{
             lastTime = currentTime
             draggableImageView?.overlayNeedsUpdate()
         }
@@ -188,7 +188,7 @@ class MapImageScrollView: UIScrollView, UIGestureRecognizerDelegate {
         let diff =  currentTime - lastTime
         
         print("diff = \(diff)")
-        if diff > 0.03{
+        if diff > 0.02{
             lastTime = currentTime
             draggableImageView?.overlayNeedsUpdate()
         }

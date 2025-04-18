@@ -210,7 +210,8 @@ class DraggableImageView: UIImageView {
                 let diffY = (resultCoordTy - originTy) * ratio - y1 - y2
                 self.transform = CGAffineTransform(a: self.transform.a, b: self.transform.b, c: self.transform.c, d: self.transform.d, tx: originTx + diffX, ty: originTy + diffY)
                 setTxTy()
-//                canvasView?.num += 1
+                tiledLayer.currentZoom = currentScale
+                tiledLayer.setNeedsDisplay()
                 if (CGFloat(zoomCount) >= (zoomDuration/repeatingTime)) {stopTimer(kind: kind)}
             }
             zoomTimer?.activate()
@@ -240,7 +241,7 @@ class DraggableImageView: UIImageView {
                     .rotated(by: -currentAngle / (angleDuration/repeatingTime) * (CGFloat.pi/180))
                     .translatedBy(x: -center.x, y: -center.y)
                 setTxTy()
-                
+                tiledLayer.setNeedsDisplay()
                 let radians:Double = atan2( Double(self.transform.b), Double(self.transform.a))
                 var degrees:CGFloat = radians * (CGFloat(180) / CGFloat.pi )
                 if degrees < 0 {degrees += 360}
